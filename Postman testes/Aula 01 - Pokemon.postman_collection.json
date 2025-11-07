@@ -1,0 +1,77 @@
+{
+	"info": {
+		"_postman_id": "bfb20e42-0bec-43f7-a500-c5d4b006fc08",
+		"name": "Aula 01 - Pokemon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49891736",
+		"_collection_link": "https://brunadev-dcf791b0-452522.postman.co/workspace/cd845c26-ea1a-455f-8b39-a1409a5c5859/collection/49891736-bfb20e42-0bec-43f7-a500-c5d4b006fc08?action=share&source=collection_link&creator=49891736"
+	},
+	"item": [
+		{
+			"name": "Localiza pokemon com sucesso",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://pokeapi.co/api/v2/pokemon/piplup",
+					"protocol": "https",
+					"host": [
+						"pokeapi",
+						"co"
+					],
+					"path": [
+						"api",
+						"v2",
+						"pokemon",
+						"piplup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Não localiza pokemon (não existe)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://pokeapi.co/api/v2/pokemon/huahua",
+					"protocol": "https",
+					"host": [
+						"pokeapi",
+						"co"
+					],
+					"path": [
+						"api",
+						"v2",
+						"pokemon",
+						"huahua"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Endpoint falho localiza pokemon",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://pokeapi.co/api/v2/pokemo/piplup",
+					"protocol": "https",
+					"host": [
+						"pokeapi",
+						"co"
+					],
+					"path": [
+						"api",
+						"v2",
+						"pokemo",
+						"piplup"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
