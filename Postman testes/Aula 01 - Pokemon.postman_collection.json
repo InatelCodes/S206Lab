@@ -8,70 +8,108 @@
 	},
 	"item": [
 		{
-			"name": "Localiza pokemon com sucesso",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://pokeapi.co/api/v2/pokemon/piplup",
-					"protocol": "https",
-					"host": [
-						"pokeapi",
-						"co"
+			"name": "GET",
+			"item": [
+				{
+					"name": "Localiza pokemon com sucesso",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"bubble\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
 					],
-					"path": [
-						"api",
-						"v2",
-						"pokemon",
-						"piplup"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Não localiza pokemon (não existe)",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://pokeapi.co/api/v2/pokemon/huahua",
-					"protocol": "https",
-					"host": [
-						"pokeapi",
-						"co"
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://pokeapi.co/api/v2/pokemon/piplup",
+							"host": [
+								"https://pokeapi.co/api/v2/pokemon"
+							],
+							"path": [
+								"piplup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Não localiza pokemon (não existe)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
 					],
-					"path": [
-						"api",
-						"v2",
-						"pokemon",
-						"huahua"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Endpoint falho localiza pokemon",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://pokeapi.co/api/v2/pokemo/piplup",
-					"protocol": "https",
-					"host": [
-						"pokeapi",
-						"co"
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://pokeapi.co/api/v2/pokemon/huahua",
+							"host": [
+								"https://pokeapi.co/api/v2/pokemon"
+							],
+							"path": [
+								"huahua"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Endpoint falho localiza pokemon",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
 					],
-					"path": [
-						"api",
-						"v2",
-						"pokemo",
-						"piplup"
-					]
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://pokeapi.co/api/v2/pokemo/piplup",
+							"host": [
+								"https://pokeapi.co/api/v2/pokemo"
+							],
+							"path": [
+								"piplup"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		}
 	]
 }
