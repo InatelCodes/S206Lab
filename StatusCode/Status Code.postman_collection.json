@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "2a3ca1d8-9e85-4d9b-904f-4a08fe03bd00",
+		"name": "Status Code",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49891736",
+		"_collection_link": "https://brunadev-dcf791b0-452522.postman.co/workspace/cd845c26-ea1a-455f-8b39-a1409a5c5859/collection/49891736-2a3ca1d8-9e85-4d9b-904f-4a08fe03bd00?action=share&source=collection_link&creator=49891736"
+	},
+	"item": [
+		{
+			"name": "Post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"https://httpbin.org/post\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Bruna\",\r\n  \"curso\": \"Qualidade de Software\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}post",
+					"host": [
+						"{{URL}}post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"https://httpbin.org/put\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "123",
+							"type": "text"
+						},
+						{
+							"key": "atualizar",
+							"value": "sim",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}put",
+					"host": [
+						"{{URL}}put"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"https://httpbin.org/patch\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"campo\": \"email\",\r\n  \"novoValor\": \"bruna@inatel.br\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}patch",
+					"host": [
+						"{{URL}}patch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Error",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}posst",
+					"host": [
+						"{{URL}}posst"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
