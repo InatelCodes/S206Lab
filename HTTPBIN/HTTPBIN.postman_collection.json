@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "131d7263-dd8d-492b-b606-5b2aad41e454",
+		"name": "HTTPBIN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49891736",
+		"_collection_link": "https://brunadev-dcf791b0-452522.postman.co/workspace/cd845c26-ea1a-455f-8b39-a1409a5c5859/collection/49891736-131d7263-dd8d-492b-b606-5b2aad41e454?action=share&source=collection_link&creator=49891736"
+	},
+	"item": [
+		{
+			"name": "SetCookies",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/cookies/set?freeform={{cookies}}",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"cookies",
+						"set"
+					],
+					"query": [
+						{
+							"key": "freeform",
+							"value": "{{cookies}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{BaseURL}}/cookies",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/cookies",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"cookies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{BaseURL}}/cookies/delete?freeform={{cookies}}",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/cookies/delete?freeform={{cookies}}",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"cookies",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "freeform",
+							"value": "{{cookies}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
